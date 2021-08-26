@@ -13,7 +13,11 @@ namespace Binary_Tree
             root.left.right = new TreeNode(5);
             TraversalUtil.PreOrderTraversal(root);
             Console.WriteLine();
+            TraversalUtil.PreorderTraversalIterative(root);
+            Console.WriteLine();
             TraversalUtil.InOrderTraversal(root);
+            Console.WriteLine();
+            TraversalUtil.InorderTraversalIterative(root);
             Console.WriteLine();
             TraversalUtil.PostOrderTraversal(root);
             Console.WriteLine();
