@@ -21,6 +21,8 @@ namespace Binary_Tree
             Console.WriteLine();
             TraversalUtil.PostOrderTraversal(root);
             Console.WriteLine();
+            TraversalUtil.PostorderTraversalIterative(root);
+            Console.WriteLine();
             TraversalUtil.LevelOrderTraversal(root);
         }
     }

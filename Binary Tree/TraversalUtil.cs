@@ -114,5 +114,34 @@ namespace Binary_Tree
                 }
             }
         }
+        public static void PostorderTraversalIterative(TreeNode root)
+        {
+            if (root == null)
+            {
+                return;
+            }
+            Stack<TreeNode> stack = new Stack<TreeNode>();
+            Stack<TreeNode> output = new Stack<TreeNode>();
+            TreeNode node = root;
+            while(node!=null|| stack.Count > 0)
+            {
+                if (node != null)
+                {
+                    output.Push(node);
+                    stack.Push(node);
+                    node = node.right;
+                }
+                else
+                {
+                    node = stack.Pop();
+                    node = node.left;
+                }
+            }
+            while (output.Count > 0)
+            {
+                TreeNode element = output.Pop();
+                Console.Write(element.data+ " ");
+            }
+        }
     }
 }
