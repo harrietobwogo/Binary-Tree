@@ -1,4 +1,4 @@
-##Binnary Tree Traversal
+## Binnary Tree Traversal
 > A C# implementation
 
 >A binary tree is an ordered tree in each every vertex has no more than two children, and each child is either designated as a left child or a right child of its parent vertex.
@@ -23,7 +23,7 @@
 
 > *Traversal of an ordered binary tree with keys **A,B,C,D,E,F,G,H,I**. (**3** nodes with **2** children, *1 node* with *1 left*, *1 node* with *1 right*, and *4 nodes* without child.) Access to node in preorder position only (red, ) yields the sequence F-B-A-D-C-E-G-I-H; in inorder position only (green, ) yields the sequence A-B-C-D-E-F-G-H-I; in postorder position only (blue, ) yields the sequence A-C-E-D-B-H-I-G-F.*
 
-###[Depth-first search of binary tree](https://github.com/samuelowino/Binary-Tree/blob/master/Binary%20Tree/TraversalUtil.cs)
+### [Depth-first search of binary tree](https://github.com/samuelowino/Binary-Tree/blob/master/Binary%20Tree/TraversalUtil.cs)
 > These searches are referred to as **depth-first search (DFS)**, since the search tree is deepened as much as possible on each child before going to the next sibling
 
 The general recursive pattern for traversing a binary tree is this:
@@ -36,7 +36,7 @@ The general recursive pattern for traversing a binary tree is this:
 
 2. Return by going up one level and arriving at the parent node of N.
 
-###[Pre-order, NLR](https://github.com/samuelowino/Binary-Tree/blob/cdc6fbb5113029ffdfa3663523b46cf8c131e8fd/Binary%20Tree/TraversalUtil.cs#L10)
+### [Pre-order, NLR](https://github.com/samuelowino/Binary-Tree/blob/cdc6fbb5113029ffdfa3663523b46cf8c131e8fd/Binary%20Tree/TraversalUtil.cs#L10)
 1. Access the data part of the current node (in the figure: position red).
 
 2. Traverse the left subtree by recursively calling the pre-order function.
@@ -57,7 +57,7 @@ PreOrderTraversal(root.right);
 
 The pre-order traversal is a **topologically sorted one**, because a parent node is processed before any of its child nodes is done.
 
-###[Post-order, LRN](https://github.com/samuelowino/Binary-Tree/blob/cdc6fbb5113029ffdfa3663523b46cf8c131e8fd/Binary%20Tree/TraversalUtil.cs#L35)
+### [Post-order, LRN](https://github.com/samuelowino/Binary-Tree/blob/cdc6fbb5113029ffdfa3663523b46cf8c131e8fd/Binary%20Tree/TraversalUtil.cs#L35)
 1.Traverse the left subtree by recursively calling the post-order function.
 
 2.Traverse the right subtree by recursively calling the post-order function.
@@ -92,7 +92,7 @@ while (output.Count > 0){
 
 ```
 
-###[In-order, LNR](https://github.com/samuelowino/Binary-Tree/blob/cdc6fbb5113029ffdfa3663523b46cf8c131e8fd/Binary%20Tree/TraversalUtil.cs#L23)
+### [In-order, LNR](https://github.com/samuelowino/Binary-Tree/blob/cdc6fbb5113029ffdfa3663523b46cf8c131e8fd/Binary%20Tree/TraversalUtil.cs#L23)
 1.Traverse the left subtree by recursively calling the in-order function.
 
 2.Access the data part of the current node (in the figure: position green).
