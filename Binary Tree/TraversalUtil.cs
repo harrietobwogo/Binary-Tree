@@ -4,10 +4,10 @@ using System.Text;
 
 namespace Binary_Tree
 {
-   public static class TraversalUtil
+    public static class TraversalUtil
     {
         //Root-->Left-->Right
-       public static void PreOrderTraversal(TreeNode root)
+        public static void PreOrderTraversal(TreeNode root)
         {
             if (root == null)
             {
@@ -54,7 +54,7 @@ namespace Binary_Tree
             while (levels.Count != 0)
             {
                 TreeNode current = levels.Dequeue();
-                Console.Write(current.data+" ");
+                Console.Write(current.data + " ");
                 if (current.left != null)
                 {
                     levels.Enqueue(current.left);
@@ -74,7 +74,7 @@ namespace Binary_Tree
             }
             Stack<TreeNode> stack = new Stack<TreeNode>();
             TreeNode node = root;
-            while (node!=null || stack.Count > 0)
+            while (node != null || stack.Count > 0)
             {
                 if (node != null)
                 {
@@ -84,7 +84,7 @@ namespace Binary_Tree
                 else
                 {
                     node = stack.Pop();
-                    Console.Write(node.data+ " ");
+                    Console.Write(node.data + " ");
                     node = node.right;
                 }
 
@@ -99,18 +99,18 @@ namespace Binary_Tree
             }
             Stack<TreeNode> stack = new Stack<TreeNode>();
             TreeNode node = root;
-            while(node!=null|| stack.Count > 0)
+            while (node != null || stack.Count > 0)
             {
                 if (node != null)
                 {
-                    Console.Write(node.data+ " ");
+                    Console.Write(node.data + " ");
                     stack.Push(node);
                     node = node.left;
                 }
                 else
                 {
                     node = stack.Pop();
-                    node = node.right; 
+                    node = node.right;
                 }
             }
         }
@@ -123,7 +123,7 @@ namespace Binary_Tree
             Stack<TreeNode> stack = new Stack<TreeNode>();
             Stack<TreeNode> output = new Stack<TreeNode>();
             TreeNode node = root;
-            while(node!=null|| stack.Count > 0)
+            while (node != null || stack.Count > 0)
             {
                 if (node != null)
                 {
@@ -140,8 +140,52 @@ namespace Binary_Tree
             while (output.Count > 0)
             {
                 TreeNode element = output.Pop();
-                Console.Write(element.data+ " ");
+                Console.Write(element.data + " ");
             }
         }
+
+        public static void SpiralLevelOrderTraversal(TreeNode root)
+        {
+            if (root == null)
+            {
+                return;
+            }
+            Stack<TreeNode> stack1 = new Stack<TreeNode>();
+            Stack<TreeNode> stack2 = new Stack<TreeNode>();
+            stack1.Push(root);
+
+            while(stack1.Count>0 || stack2.Count > 0)
+            {
+                while (stack1.Count > 0)
+                {
+                    TreeNode node = stack1.Pop();
+                    Console.Write(node.data+" ");
+                    if (node.left != null)
+                    {
+                        stack2.Push(node.left);
+                    }
+                    if (node.right != null)
+                    {
+                        stack2.Push(node.right);
+                    }
+
+                }
+                while (stack2.Count > 0)
+                {
+                    TreeNode node = stack2.Pop();
+                    Console.Write(node.data + " ");
+                    if (node.right != null)
+                    {
+                        stack2.Push(node.right);
+                    }
+                    if (node.left != null)
+                    {
+                        stack2.Push(node.left);
+                    }
+
+                }
+            }
+        }
+
     }
 }
