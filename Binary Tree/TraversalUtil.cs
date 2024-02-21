@@ -176,11 +176,11 @@ namespace Binary_Tree
                     Console.Write(node.data + " ");
                     if (node.right != null)
                     {
-                        stack2.Push(node.right);
+                        stack1.Push(node.right);
                     }
                     if (node.left != null)
                     {
-                        stack2.Push(node.left);
+                        stack1.Push(node.left);
                     }
 
                 }
